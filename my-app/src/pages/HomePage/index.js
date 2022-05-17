@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LifeCycle from "./LifeCycle";
 export default class HomePage extends Component {
-  state = { show: false, appStateValue: 0, other: 0 };
+  state = { show: false, appStateValue: 0 };
   render() {
     const { show, appStateValue } = this.state;
 
@@ -16,7 +16,7 @@ export default class HomePage extends Component {
             this.setState({ appStateValue: this.state.appStateValue + 1 })
           }
         >
-          PLUS appStateValue
+          increate appStateValue
         </button>
 
         <button
@@ -24,11 +24,7 @@ export default class HomePage extends Component {
             this.setState({ appStateValue: this.state.appStateValue - 1 })
           }
         >
-          MINUS appStateValue
-        </button>
-
-        <button onClick={() => this.setState({ other: this.state.other + 1 })}>
-          Other
+          decrease appStateValue
         </button>
 
         {show && <LifeCycle propValue={appStateValue} />}

@@ -50,7 +50,7 @@ class LifeCycle extends React.Component {
             this.setState({ stateValue: this.state.stateValue + 1 })
           }
         >
-          PLUS stateValue
+          increase stateValue
         </button>
 
         <button
@@ -58,7 +58,7 @@ class LifeCycle extends React.Component {
             this.setState({ stateValue: this.state.stateValue - 1 })
           }
         >
-          MINUS stateValue
+          decrease stateValue
         </button>
       </div>
     );
