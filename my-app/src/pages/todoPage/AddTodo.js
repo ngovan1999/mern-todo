@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import { withTranslation } from "react-i18next";
+import {
+  createBookServices,
+  getAllBooksServices,
+} from "../../services/book.service";
 
 class AddTodo extends Component {
   state = {
@@ -11,23 +15,22 @@ class AddTodo extends Component {
       title: event.target.value,
     });
   };
-  handleAddTodo = () => {
+  handleAddTodo = async () => {
     if (!this.state.title) {
       toast.warn("Error");
       return;
     }
     let todo = {
-      id: this.props.ListTodos.length + 1,
       title: this.state.title,
     };
-    this.props.addNewTodo(todo);
+    await createBookServices(todo);
+    this.props.handleListTodo();
     this.setState({
       title: "",
     });
   };
   render() {
     let { title } = this.state;
-    let { ListTodos } = this.props;
     return (
       <div className="add-todo">
         <input

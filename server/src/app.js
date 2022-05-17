@@ -12,7 +12,7 @@ const middleware = (app) => {
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Cross-Origin-Resource-Policy", "cross-origin");
+    // res.header("Cross-Origin-Resource-Policy", "cross-origin");
     next();
   });
 };

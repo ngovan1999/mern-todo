@@ -4,6 +4,8 @@ const request = axios.create({
   timeout: 60000,
   headers: {
     "Content-Type": "application/json" || "multipart/form-data",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
   },
 });
 
