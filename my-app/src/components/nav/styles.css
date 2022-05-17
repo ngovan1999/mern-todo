@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  height: 49px;
+}
+
+.topnav > a {
+  float: left;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.theme {
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}

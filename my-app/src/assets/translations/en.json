@@ -1,0 +1,15 @@
+{
+  "translations": {
+    "home": "home",
+    "title_list_work": "Simple TODO Apps",
+    "Todo_list": "Todo List",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "english": "English",
+    "vietnam": "VietName",
+    "signin": "Sign in",
+    "register": "Register"
+  }
+}

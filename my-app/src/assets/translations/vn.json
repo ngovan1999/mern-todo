@@ -1,0 +1,15 @@
+{
+  "translations": {
+    "home": "Trang chủ",
+    "title_list_work": "Danh sách công việc đơn giản",
+    "Todo_list": "Danh sách công việc",
+    "add": "Thêm",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "save": "Lưu",
+    "english": "Tiếng Anh",
+    "vietnam": "Tiếng Việt",
+    "signin": "Đăng nhập",
+    "register": "Đăng ký"
+  }
+}
