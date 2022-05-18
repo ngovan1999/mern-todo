@@ -25,7 +25,9 @@ const createBook = async (req, res) => {
 
 const updateBook = async (req, res) => {
   try {
-    const bookupdate = await Book.findByIdAndUpdate(req.params.id, req.body);
+    const bookupdate = await Book.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     res.json({ book: bookupdate });
   } catch (error) {
     res.status(400).json({ error: "Unable to update the Database" });
