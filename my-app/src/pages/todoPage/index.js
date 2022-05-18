@@ -50,6 +50,7 @@ class TodoPage extends Component {
   handleEditTodo = (todo) => {
     let { editTodo } = this.state;
     let isEmptyObj = Object.keys(editTodo).length === 0;
+    console.log(isEmptyObj);
     //save
     if (isEmptyObj === false && editTodo._id === todo._id) {
       updateBookServices(todo._id, { title: editTodo.title }).then((res) => {
@@ -60,7 +61,6 @@ class TodoPage extends Component {
           });
         });
       });
-      return;
     }
     //edit
     this.setState({
@@ -179,7 +179,7 @@ class TodoPage extends Component {
           </div>
         </div>
         <Modal
-          title="Basic Modal"
+          title="Detail book"
           visible={this.state.isModalVisible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -187,12 +187,12 @@ class TodoPage extends Component {
           <Row>
             <Col span={24}>
               <Typography.Title>
-                Mã : {this.state.todo && this.state.todo._id}
+                Tên: {this.state.todo && this.state.todo.title}
               </Typography.Title>
             </Col>
             <Col span={24}>
               <Typography.Text>
-                Tên: {this.state.todo && this.state.todo.title}
+                Decription: {this.state.todo && this.state.todo.description}
               </Typography.Text>
             </Col>
           </Row>

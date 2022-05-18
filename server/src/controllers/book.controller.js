@@ -15,7 +15,7 @@ const getDetailBook = (req, res) => {
 const createBook = async (req, res) => {
   try {
     const book = new Book(req.body);
-    console.log(req.body);
+    book.userId = req.params.userId;
     await book.save();
     res.json({ book, msg: "Book added successfully" });
   } catch (error) {

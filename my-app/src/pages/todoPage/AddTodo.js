@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import { withTranslation } from "react-i18next";
-import {
-  createBookServices,
-  getAllBooksServices,
-} from "../../services/book.service";
+import { createBookServices } from "../../services/book.service";
 
 class AddTodo extends Component {
   state = {
     title: "",
+    description: "",
   };
   handleOnChangTitle = (event) => {
     this.setState({
       title: event.target.value,
+    });
+  };
+  handleOnChangDescription = (event) => {
+    this.setState({
+      description: event.target.value,
     });
   };
   handleAddTodo = async () => {
@@ -22,22 +25,40 @@ class AddTodo extends Component {
     }
     let todo = {
       title: this.state.title,
+      description: this.state.description,
     };
     await createBookServices(todo);
     this.props.handleListTodo();
     this.setState({
       title: "",
+      description: "",
     });
   };
   render() {
-    let { title } = this.state;
+    let { title, description } = this.state;
+    console.log(description);
     return (
       <div className="add-todo">
-        <input
-          type="text"
-          value={title}
-          onChange={(event) => this.handleOnChangTitle(event)}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="title"
+            value={title}
+            onChange={(event) => this.handleOnChangTitle(event)}
+          />
+          <textarea
+            className="mt-12 mb-12"
+            placeholder="description"
+            value={description}
+            onChange={(event) => this.handleOnChangDescription(event)}
+          />
+        </div>
         <button
           type="button"
           className="add"

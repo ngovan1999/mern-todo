@@ -7,6 +7,13 @@ const BookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+  },
+  userId: {
+    type: mongoose.Types.ObjectId,
+    ref: "users",
+  },
   // isbn: {
   //   type: String,
   //   required: true,
@@ -14,9 +21,6 @@ const BookSchema = new mongoose.Schema({
   // author: {
   //   type: String,
   //   required: true,
-  // },
-  // description: {
-  //   type: String,
   // },
   //   published_date: {
   //     type: Date,
