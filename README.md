@@ -4,7 +4,7 @@ cd my-app
 npm install -> build node_module FE
 npm start -> start fe
 
-cd ser-app 
+cd server
 npm install -> build node_module BE
 npm run app -> start app with nodemon
 
